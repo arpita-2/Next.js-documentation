@@ -1,0 +1,83 @@
+Next js=======================chapter 4 (getting started with react)
+
+Notes=================================================================================
+
+1) react is the core React library.
+   react-dom provides DOM-specific methods that enable you to use React with the DOM.
+
+===Create root = we use create root to create a React root for displaying content inside a browser DOM element.
+===Web became more interactive, logic increasingly determined content. JavaScript was in charge of the HTML! This is why in React, rendering logic and markup live 
+   together in the same place—components.
+===React components use a syntax extension called JSX to represent that markup. JSX looks a lot like HTML, but it is a bit stricter and can display dynamic 
+   information. 
+===JSX is a syntax extension, while React is a JavaScript library.
+
+2) What is JSX?/
+JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax. The nice thing
+about JSX is that apart from following three JSX rules, you don't need to learn any new symbols or syntax outside of HTML 
+and JavaScript.
+
+===3 rules of JSX
+==a) Return a single root element 
+->-> To return multiple elements from a component, wrap them with a single parent tag. Here <div> is the parent tag.
+     eg: 
+<div>
+  <h1>Hedy Lamarr's Todos</h1>
+  <img 
+    src="https://i.imgur.com/yXOvdOSs.jpg" 
+    alt="Hedy Lamarr" 
+    class="photo"
+  >
+  <ul>
+    ...
+  </ul>
+</div>
+
+
+If you don’t want to add an extra <div> to your markup, you can write <> and </> instead:
+<>
+  <h1>Hedy Lamarr's Todos</h1>
+  <img 
+    src="https://i.imgur.com/yXOvdOSs.jpg" 
+    alt="Hedy Lamarr" 
+    class="photo"
+  >
+  <ul>
+    ...
+  </ul>
+</>
+
+so basically, This empty tag <> is called a Fragment. Fragments let you group things without leaving any trace in the browser HTML tree.
+
+
+===b) Close all the tags
+->->-> JSX requires tags to be explicitly closed: self-closing tags like <img> must become <img />, and wrapping tags like <li>oranges must be written as 
+<li>oranges</li>.
+
+<>
+  <img 
+    src="https://i.imgur.com/yXOvdOSs.jpg" 
+    alt="Hedy Lamarr" 
+    class="photo"
+   />
+  <ul>
+    <li>Invent new traffic lights</li>
+    <li>Rehearse a movie scene</li>
+    <li>Improve the spectrum technology</li>
+  </ul>
+</>
+
+===c) Camel case all most of the things
+      Javascript has its own limitations on variable names-their names can’t contain dashes or be reserved words like class.This is why, in React, many HTML and SVG 
+      attributes are written in camelCase. For example, instead of stroke-width you use strokeWidth.Since class is a reserved word, in React you write className instead.
+
+
+3) ClassName property/=
+->-> The name className is used for this property instead of class because of conflicts with the "class" keyword in many languages which are used to manipulate the DOM.
+
+4)Babel: 
+
+babel is a javaScript compiler.....browsers don't understand JSX out of the box, so you'll need a JavaScript compiler, such as a Babel.
+
+5) Conditional (ternary operator)
+

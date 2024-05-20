@@ -1,0 +1,16 @@
+Next.js----------------------------Chapter 3 -----Updating UI with javaScript
+
+Notes========================================================================
+
+1)  HTML represents the initial page content, whereas the DOM represents the updated page content which was changed by the 
+JavaScript code you wrote.
+
+##Imperative vs Declarative programming
+Imperative programming: so in imperatve programming we have to write the all the DOM method step by step. This lead to slow down the process.
+imperative programming is like giving a chef step-by-step instructions on how to make a pizza. 
+
+Declarative programming: A declarative approach is often preferred because it can speed up the development process.
+Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza. 🍕
+
+React is a declarative library. As a developer, you can tell React what you want to happen to the user interface, and React will figure out the steps of how to update 
+the DOM on your behalf.

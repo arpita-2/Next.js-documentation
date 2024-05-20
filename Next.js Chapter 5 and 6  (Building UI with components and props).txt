@@ -1,0 +1,144 @@
+Next js ===================================== Chapter 5Building UI with components
+
+Notes=========================================================================
+
+1) There are 3 core concept of react. These are - a)components b)props c)state
+->->a) Components: User interfaces can be broken down into smaller building blocks called components. Components allow you to build self-contained, reusable snippets of
+    code. If you think of components as LEGO bricks, you can take these individual bricks and combine them together to form larger structures. If you need to update a 
+    piece of the UI, you can update the specific component or brick. We can add, update, and delete components without touching the rest of our application.
+    
+    In react, we know that components are the functions. A component is a function that returns UI elements. Inside the return statement of the function.
+
+2) Nesting component
+
+->->your top-level HomePage component could hold a Header, an Article, and a Footer Component. And each of those components could in turn have their own child component
+    s and so on. For example, the Header component could contain a Logo, Title and Navigation components
+
+
+
+Interview: Function vs Arrow Function, Objects.
+Array methods, obj, methods, split and rest.
+
+
+Next js =================================================================Chapter 6 , Displaying data with props
+
+Notes===========================================================================================================
+
+1) Props :  you can pass pieces of information as properties to React components. These are called props.Similar to a JavaScript function, you can design components 
+that accept custom arguments (or props) that change the component's behavior or what is visibly shown when it's rendered to the screen. Then, you can pass down these 
+props from parent components to child components.
+
+Showing how prop works here:
+In your HomePage component, you can pass a custom title prop to the Header component, just like we  pass HTML attributes:
+
+function HomePage() {
+  return (
+    <div>
+      <Header title="React" />
+    </div>
+  );
+}
+
+
+And Header, the child component, can accept those props as its first function parameter:
+So what is function parameter ??????
+
+->-> Function parameters are the names listed in the function definition.
+
+
+function Header(props) {
+  return <h1>Develop. Preview. Ship.</h1>;
+}
+
+so if we do consoloe.log(props), we can see that prop is an object with an title property. 
+function Header(props) {
+console.log(props);
+  return <h1>Develop. Preview. Ship.</h1>;
+}
+
+imp->->->-> To use the title prop, add curly braces {}. These are a special JSX syntax that allows you to write regular JavaScript directly inside your JSX markup.
+
+You can think of curly braces as a way to enter "JavaScript land" while you are in "JSX land". You can add any JavaScript expression (something that evaluates to a 
+single value) inside curly braces. For example:
+
+a) An object property with dot notation:
+
+function Header(props) {
+  return <h1>{props.title}</h1>;
+}
+
+b) A template literal : Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, string interpolation with embedded 
+   expressions, and special constructs called tagged templates. 
+
+function Header({ title }) {
+  return <h1>{`Cool ${title}`}</h1>;
+}
+
+c) The returned value of a function:
+
+function createTitle(title) {
+  if (title) {
+    return title;
+  } else {
+    return 'Default title';
+  }
+}
+ 
+function Header({ title }) {
+  return <h1>{createTitle(title)}</h1>;
+}
+
+d) Or ternary operators:
+
+function Header({ title }) {
+  return <h1>{title ? title : 'Default Title'}</h1>;
+} 
+
+
+3) IIterating through lists
+It's common to have data that you need to show as a list. You can use array methods to manipulate your data and generate UI elements that are identical in style but 
+hold different pieces of information.
+
+Add the following array of names to your HomePage component:
+
+ const app = document.getElementById("app");
+
+      function Header (props) {
+       return (
+        <h1>{props.title}</h1>
+       )
+      }
+
+      function Homepage() {
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+        return (
+          <div>
+            <Header title="Develop. Preview. Ship." />
+            <ul>
+              {names.map((name) => (
+                <li>{name}</li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<Homepage />);
+
+
+before we are facing an error while directly giving the {title} into Header component because
+The issue here is that title is not defined within the Header component, which is why the title is not rendering correctly.
+In the code provided, title is being used as a prop in the <Header> component like this:
+
+<Header title="Develop. Preview. Ship." />
+
+However, the Header component is not receiving this prop correctly. To fix this, you need to modify the Header component to receive the title prop.
+
+In the updated Header component, we're accepting the props object as a parameter, and then accessing the title prop using props.title. This way, when the Header 
+component is rendered with the title prop, it will display the correct title.
+
+
+
+ 

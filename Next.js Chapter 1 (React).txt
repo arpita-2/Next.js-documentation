@@ -1,0 +1,29 @@
+Next js ..................Chapter 1
+
+Notes:
+
+1) Next.js is a flexible React framework that gives you building blocks to create fast, full-stack web applications.
+   can use React to build your UI, then incrementally adopt Next.js features to solve common application requirements such as routing, data fetching, and caching - all 
+   while improving the developer and end-user experience.
+
+2) There are few things that we need to know about while building the web applications:
+   a) user interface: how users will consume and interact with your application.
+   b) Rendering:      when and where you render static or dynamic content.
+   c) Data fetching:  where your data lives and how to get it.
+   d) Infrastructure: where you deploy, store, and run your application code (serverless, CDN, edge, etc.).
+   e) Integration:    what third-party services you use (for CMS, auth, payments, etc.) and how you connect to them.
+   f) Routing:        how users navigate between different parts of your application.
+   g) performance:    how to optimize your application for end-users.
+   h) scalability:    how your application adapts as your team, data, and traffic grow.
+   i) Developer experience: your team's experience building and maintaining your application.
+
+
+3) React: React is a JavaScript library for building interactive user interfaces.
+
+4) What do you mean by library in react?/
+Ans: So basically library mean the react provide API to build UI to the developer but it's depend on the developer where to use those functions in the application
+
+5) What do you mean by framework in Next.js ?/
+Ans: By framework, we mean Next.js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your 
+     application.
+

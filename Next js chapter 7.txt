@@ -1,0 +1,130 @@
+Next.js==========================================Adding Interactivity with state
+
+Notes===============================================================================
+
+State and event Handlers
+
+1) Listening to events: 
+To make the button do something when clicked, you can use the onClick event:
+
+function HomePage() {
+  // ...
+  return (
+    <div>
+      {/* ... */}
+      <button onClick={}>Like</button>
+    </div>
+  );
+}
+
+In React, event names are camelCased. The onClick event is one of many possible events you can use to respond to user interaction. 
+Like for example, there are more event such as onChange for input fields or onSubmit for forms.
+
+function Homepage() {
+        const names = ['apple, mango, cherry, orange, peach'];
+        return (
+          <div>
+            <Header title = "Hello" />
+            <ul>
+            {names.map((name) => (
+
+            <li>{name}</li>
+
+            ))}
+            </ul>
+
+            <button onClick={}>Like</button>
+          </div>
+        );
+      }
+
+
+So here in this code, the code is incomplete. The onClick event handler in the <button> element is missing a function to be called when the button is clicked.
+
+So now moving to HANDLING EVENTS: 
+
+we can define a function to "handle" events whenever they are triggered. Create a function before the return statement called handleClick():
+
+function handleSubmitClick () {
+}
+//adding logic here for handling the "submit" button click
+The handleLikeClick function contains the logic that should be executed when the "submit" button is clicked. In this example, it just logs a message to the console, but you can add your desired functionality here.
+The onClick event handler in the <button> element is assigned the handleLikeClick function.
+
+Now, when the "submit" button is clicked, the handleLikeClick function will be called, and the code inside it will be executed.
+
+
+=======================STATE AND HOOKS=======================================================
+React hook used to manage state is called: useState(). Hooks allow you to add additional logic such as state to your components. useState() to your project. It returns 
+an array, and you can access and use those array values inside your component using array destructuring:
+
+function HomePage() {
+  // ...
+  const [] = React.useState();
+ 
+  // ...
+}
+
+The first item in the array is the state value, which you can name anything.
+function HomePage() {
+  // ...
+  const [likes] = React.useState();
+ 
+  // ...
+}
+
+The second item in the array is a function to update the value. You can name the update function anything, but it's common to prefix it with set followed by the name 
+of the state variable you're updating: It is to show in the UI.
+
+function HomePage() {
+  // ...
+  const [likes, setLikes] = React.useState();
+ 
+  // ...
+}
+
+ we can call your state updater function, setLikes in your HomePage component, let's add it inside the handleClick() function you previously defined:
+
+const app = document.getElementById("app");
+
+      function Header (props) {
+       return (
+        <h1>{props.title}</h1>
+       );
+      }
+
+      function Homepage() {
+
+        const [submit, setSubmit] = React.useState(0);
+
+        function handleSubmitClick () {
+          setSubmit(submit + 1);
+
+        }
+        const names = ['apple, mango, cherry, orange, peach'];
+
+
+        return (
+          <div>
+            <Header title = "Hello" />
+            <ul>
+            {names.map((name) => (
+
+            <li>{name}</li>
+
+            ))}
+            </ul>
+
+            <button onClick={handleSubmitClick}>Submit({submit})</button>
+          </div>
+        );
+      }
+
+
+
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<Homepage />);
+
+Q.What is the difference between props and state ????
+Props are read-only information that's passed to components. State is information that can change over time, usually triggered by user interaction.
